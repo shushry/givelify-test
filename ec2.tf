@@ -9,7 +9,7 @@ resource "aws_key_pair" "key" {
 resource "aws_instance" "webserver" {
   count                  = var.webserver_count
   ami                    = data.aws_ami.ami.id
-  instance_type          = "t3.micro"
+  instance_type          = var.ec2-size
   subnet_id              = element(module.vpc.private_subnets, count.index)
   key_name               = aws_key_pair.key.key_name
   user_data_base64       = base64encode(local.webserver_setup)
