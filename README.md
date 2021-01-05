@@ -1,6 +1,6 @@
-#Givelify Terraform Test
+# Givelify Terraform Test
 
-##Problem:
+## Problem:
 --------------------------
 For this exercise we'd like to have a Terraform plan that will install and deploy a very simple website with one page in it on multiple servers, in this case, two servers.
 
@@ -19,12 +19,12 @@ The plan(s) and deployment scripts will provision and install the following:
 * Install nginx and configure it to have a default webpage on each server, as described above on both servers.
 
 
-##Solution:
+## Solution:
 
 This solution provides an AWS ALB-based solution that deploys two ec2-instances, registers the instances with the ALB stack, applies appropriate permissions and access controls and then deploys a single-page rendition of the Givelify home page to the EC2 nodes.   A VPC is also created here to contain the project using the stock terraform VPC module which simplifies deployment of a fairly typical VPC environment (multiple AZ public and private subnets, internet gateways, NAT gateways, and appropriate routing).   Terraform state is stored in an S3 bucket (pre-created) and this project assumes the executor to have an pre-authorized aws-cli environment.   Per spec, this project will update/patch all instances at create-time, however the project also deploys the very latest Amazon Linux 2 version which is likely already patched significantly close to date.
 
 
-##Files:
+## Files:
 * vpc.tf:  Contains code related to the VPC setup
 
 * alb.tf:  Contains code related to load balancing, and target group attachments
