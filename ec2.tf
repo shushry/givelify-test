@@ -21,7 +21,7 @@ resource "aws_instance" "webserver" {
   }
 
   tags = {
-    Name = "web-server-${count.index}"
+    Name = "web-server-${count.index + 1}"
   }
 
   depends_on = [
