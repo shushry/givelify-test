@@ -1,7 +1,5 @@
 # Givelify Terraform Test
-
 ## Problem:
---------------------------
 For this exercise we'd like to have a Terraform plan that will install and deploy a very simple website with one page in it on multiple servers, in this case, two servers.
 
 You may use additional tools to complete the exercise, but the servers provisions and LB must be provisioned with Terraform.
